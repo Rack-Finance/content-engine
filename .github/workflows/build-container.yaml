@@ -33,10 +33,10 @@ jobs:
     - name: Setup Pack CLI
       uses: buildpacks/github-actions/setup-pack@v5.0.0
 
-    - name: DEBUG Credentials
+    - name: Debug
       run: |
         echo "DOCKER_HUB_REPO: ${{ env.DOCKER_HUB_REPO }}"
-        echo "DOCKER_HUB_IMAGE_TAG: ${{ env.DOCKER_HUB_IMAGE_TAG }}
+        echo "DOCKER_HUB_IMAGE_TAG: ${{ env.DOCKER_HUB_IMAGE_TAG }}"
 
     - name: Build app using Buildpacks
       run: |
