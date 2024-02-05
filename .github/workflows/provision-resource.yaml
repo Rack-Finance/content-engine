@@ -1,0 +1,20 @@
+name: Provision Resource
+
+on:
+  workflow_run:
+    workflows: ["Django Buildpack"]
+    types:
+      - completed
+
+
+jobs:
+  provision-resources-needed:
+    runs-on: ubuntu-latest
+
+    env:
+      BASE_DIR: ${{ secrets.BASE_DIR || 'src/' }}
+      DOCKER_HUB_IMAGE_TAG: ${{ secrets.DOCKER_HUB_IMAGE_TAG || github.sha }}
+
+    steps:
+      - name: Echo Triggered
+        run: echo "Provision Resource workflow triggered for terraform"

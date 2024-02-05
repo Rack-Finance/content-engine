@@ -9,6 +9,10 @@ on:
     branches: [main]
     paths:
       - 'src/**'
+  workflow_run:
+    workflows: ["Django Buildpack"]
+    types:
+      - completed
   workflow_dispatch:
     
 
